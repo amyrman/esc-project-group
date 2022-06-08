@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="[ESC] Challenges "/>
-    <meta property="og:url" content="https://christerresin.github.io/esc_v2/challenges.html" />
-    <meta property="og:image" content="https://christerresin.github.io/esc_v2/images/ChallengesOpenGraphPic.png" />
-    <meta property="og:description" content="Try our amazing challenges online or on-site." />
+    <meta property="og:title" content="[ESC] Challenges " />
+    <meta
+      property="og:url"
+      content="https://christerresin.github.io/esc_v2/challenges.html"
+    />
+    <meta
+      property="og:image"
+      content="https://christerresin.github.io/esc_v2/images/ChallengesOpenGraphPic.png"
+    />
+    <meta
+      property="og:description"
+      content="Try our amazing challenges online or on-site."
+    />
     <meta property="og:locale" content="en_GB" />
     <title>Hacker Escape Rooms - Challenges</title>
   </head>
   <body>
     <header class="header">
-      <a class="index" href="index.html"><h1 class="logo">Hacker Escape Rooms</h1></a>
+      <a class="index" href="index.html"
+        ><h1 class="logo">Hacker Escape Rooms</h1></a
+      >
     </header>
 
     <nav class="main-nav">
@@ -28,45 +45,54 @@
       </ul>
     </nav>
     <section class="our-challenges">
-        <h2 class="our-challenges-title">Our challenges</h2>
-        <a class="filter-cta" href="#">Filter challenges</a>
-        <div class="filter-board"></div>
-        <div class="sort-container"></div>
-        <ul class="challenges-list">
-        </ul>
+      <h2 class="our-challenges-title">Our challenges</h2>
+      <a class="filter-cta" href="#">Filter challenges</a>
+      <div class="filter-board"></div>
+      <div class="sort-container"></div>
+      <ul class="challenges-list"></ul>
     </section>
 
+    <!-- Div used for loading indicator -->
+    <div class="loader-container">
+      <div id="loader">
+        <div></div>
+      </div>
+    </div>
 
     <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-summary">
-            <h2>[Esc] Hacker Escape Rooms</h2>
-            <p>
-              Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur et labore cillum consectetur aliquip non consectetur dolore et Lorem aliquip minim. Magna ullamco voluptate do magna enim esse cupidatat ipsum culpa enim ut aliqua. Proident eu labore duis id consequat ipsum occaecat adipisicing nostrud.
-            </p>
-          </div>
-          <div class="footer-sitemap">
-            <h2>Site map</h2>
-            <ul>
-              <li><a href="story.html">The Story</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Legal</a></li>
-            </ul>
-            <ul>
-              <li><a href="challenges.html">Play online</a></li>
-              <li><a href="challenges.html">Play on-site</a></li>
-            </ul>
-          </div>
-          <div class="footer-social">
-            <h2>Follow us on</h2>
-            <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Twitter</a></li>
-            </ul>
-          </div>
+      <div class="footer-content">
+        <div class="footer-summary">
+          <h2>[Esc] Hacker Escape Rooms</h2>
+          <p>
+            Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur
+            et labore cillum consectetur aliquip non consectetur dolore et Lorem
+            aliquip minim. Magna ullamco voluptate do magna enim esse cupidatat
+            ipsum culpa enim ut aliqua. Proident eu labore duis id consequat
+            ipsum occaecat adipisicing nostrud.
+          </p>
         </div>
-      </footer>
-    </body>
-    <script src="bundle.js"></script>
-  </html>
+        <div class="footer-sitemap">
+          <h2>Site map</h2>
+          <ul>
+            <li><a href="story.html">The Story</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Legal</a></li>
+          </ul>
+          <ul>
+            <li><a href="challenges.html">Play online</a></li>
+            <li><a href="challenges.html">Play on-site</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h2>Follow us on</h2>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="bundle.js"></script>
+</html>

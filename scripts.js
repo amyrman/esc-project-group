@@ -49,7 +49,12 @@ class Challenge {
 
         let challengeDescription = document.createElement('p');
         challengeDescription.classList.add('challenge-description');
-        challengeDescription.innerHTML = this.description
+        const maxTextLength=50; //specify the max lenth of displayed text
+        if (this.description.length>maxTextLength) {
+            challengeDescription.innerHTML = this.description.substring(0,maxTextLength)+"...";
+        } else {
+            challengeDescription.innerHTML = this.description;
+        }
 
         let challengeCta = document.createElement('a');
         challengeCta.classList.add('challenge-cta');

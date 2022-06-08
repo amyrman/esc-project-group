@@ -1,4 +1,4 @@
-export default function modalFunc(h1title, minParticipants, maxParticipants) {
+export default function modalFunc(roomID,h1title, minParticipants, maxParticipants) {
 
   //===TODO==================================
     // - STYLE
@@ -187,7 +187,7 @@ export default function modalFunc(h1title, minParticipants, maxParticipants) {
   };
 
   function setBookingDate() {
-    // if (inp.value == "") {
+    // if (inp1.value == "") {
     //   alert("Error, no selected date.");
     //   // stop the process here until the date is selected
     // }
@@ -210,14 +210,14 @@ export default function modalFunc(h1title, minParticipants, maxParticipants) {
       alert('Please select a new date, date over a year in the future')
     } else {
 
-        const availableTimes = searchAvailableTimes(reqDate);
+        const availableTimes = searchAvailableTimes(roomID,reqDate);
         // if (availableTimes.booking.date != reqDate) {
         // alert('No matching available date, please choose again.\nThe available date is ' + availableTimes.booking.date)
         // }
 
-        async function searchAvailableTimes(reqDate) {
+        async function searchAvailableTimes(roomID,reqDate) {
           const response = await fetch(
-            "https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=" +
+            "https://lernia-sjj-assignments.vercel.app/api/booking/available-times?challenge="+roomID+"&date=" +
               reqDate,
             {
               method: "GET",
@@ -228,6 +228,7 @@ export default function modalFunc(h1title, minParticipants, maxParticipants) {
             if (response.ok) {
               response.json().then(function (data) {
                 const gatheredTimes = data.slots;
+                // console.log(data);// remove after test
 
                 // call a function to switch the booking process to the next step
                 bookingNextStep(gatheredTimes);
@@ -326,36 +327,41 @@ export default function modalFunc(h1title, minParticipants, maxParticipants) {
 
     // set number of participants
     const reqPart = setParticipantsNumber();
-    postBookingData(reqName, reqPhone, reqEmail, reqDate, reqTime, reqPart);
+    if (reqDate && reqName && reqEmail && reqTime && reqPart) {
 
-    // build the post object to the server
-    async function postBookingData(
-      reqName,
-      reqPhone,
-      reqEmail,
-      reqDate,
-      reqTime,
-      reqPart
-    ) {
-      const res = await fetch(
-        "https://lernia-sjj-assignments.vercel.app/api/booking/reservations",
-        {
-          method: "POST",
-          mode: "cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: reqName,
-            phone: reqPhone,
-            email: reqEmail,
-            date: reqDate,
-            time: reqTime,
-            participants: parseInt(reqPart),
-          }),
-        }
-      );
-      const bookingstatus = await res.json();
-      console.log(bookingstatus);
-      
+      postBookingData(roomID,reqName, reqPhone, reqEmail, reqDate, reqTime, reqPart);
+
+      // build the post object to the server
+      async function postBookingData(
+        roomID,
+        reqName,
+        reqPhone,
+        reqEmail,
+        reqDate,
+        reqTime,
+        reqPart
+      ) {
+        const res = await fetch(
+          "https://lernia-sjj-assignments.vercel.app/api/booking/reservations",
+          {
+            method: "POST",
+            mode: "cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              challenge:parseInt(roomID),
+              name: reqName,
+              phone: reqPhone,
+              email: reqEmail,
+              date: reqDate,
+              time: reqTime,
+              participants: parseInt(reqPart),
+            }),
+          }
+        );
+        const bookingstatus = await res.json();
+        console.log(bookingstatus);
+      }
+
       div2.style.display = "none";
       div3.style.display = "flex";
     }

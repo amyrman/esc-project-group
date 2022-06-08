@@ -28,7 +28,7 @@ img {
   height: 80px;
   line-height: 1em;
   font-size: 1.6rem;
-  background-image: url("images/logo.png");
+  background-image: url('images/logo.png');
   background-size: 120px;
   background-repeat: no-repeat;
 }
@@ -58,7 +58,7 @@ img {
   background-color: white;
 }
 .main-nav .main-nav-toggle::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0.7rem;
   display: block;
@@ -70,7 +70,7 @@ img {
   transition: opacity 0.5s;
 }
 .main-nav .main-nav-toggle::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 1.4rem;
   display: block;
@@ -174,7 +174,7 @@ img {
   }
 }
 .hero-image {
-  background-image: url("images/hero.png");
+  background-image: url('images/hero.png');
   background-size: cover;
   height: 40vh;
 }
@@ -319,6 +319,13 @@ img {
   }
 }
 
+@media screen and (min-width: 1700px) {
+  .challenges-list {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.5rem;
+  }
+}
+
 .challenges-item {
   display: flex;
   flex-direction: column;
@@ -375,12 +382,12 @@ img {
   width: 1rem;
   height: 1rem;
   margin: 0 0.4rem 0 0;
-  background-image: url("images/star-on.png");
+  background-image: url('images/star-on.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
 .challenges-item .challenge-rating .challenge-rating-star.off {
-  background-image: url("images/star-off.png");
+  background-image: url('images/star-off.png');
 }
 .challenges-item .challenge-description {
   margin-top: 1rem;
@@ -786,11 +793,11 @@ img {
 }
 
 .filter-rating-star.on {
-  background-image: url("images/star-on.png");
+  background-image: url('images/star-on.png');
 }
 
 .filter-rating-star.off {
-  background-image: url("images/star-off.png");
+  background-image: url('images/star-off.png');
 }
 
 .filter-search-text {
@@ -940,7 +947,7 @@ img {
 
 .placeholder-img {
   height: 40vh;
-  background-image: url("images/dummypic.png");
+  background-image: url('images/dummypic.png');
   background-size: cover;
   height: 40vh;
 }
@@ -1052,4 +1059,36 @@ img {
 }
 .challenges-item:hover {
   box-shadow: 0 0 5rem rgba(182, 189, 181, 0.9);
+}
+
+/* LOADER STYLING */
+.loader-container {
+  width: 100%;
+}
+
+/* THIS MAKES NO DIFFERENCE? */
+/* #loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+} */
+
+#loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px auto;
+  border-radius: 50%;
+  border: 6px solid #8acfe5;
+  border-color: #8acfe5 transparent #8acfe5 transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
